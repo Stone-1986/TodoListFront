@@ -1,0 +1,71 @@
+<div class="main-container">
+    <div class="container">
+        <h1 class="app-title">Todo List App</h1>
+
+        <!-- Formulario para agregar o editar una tarea -->
+        <mat-card class="task-form-card">
+            <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+                <mat-form-field class="full-width">
+                    <mat-label>Enter Title</mat-label>
+                    <input matInput formControlName="title" />
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Enter Description</mat-label>
+                    <textarea matInput formControlName="description" rows="2"></textarea>                </mat-form-field>
+
+                <div class="button-group">
+                    <button mat-raised-button color="primary" type="submit">+ ADD</button>
+                </div>
+            </form>
+        </mat-card>
+
+        <!-- Lista de tareas pendientes -->
+        <h2 class="section-title text-primary">Pending Tasks</h2>
+        <div *ngIf="pendingTasks.length > 0">
+            <mat-card class="task-item-card" *ngFor="let task of pendingTasks">
+                <div class="grid-container">
+                    <div class="task-content">
+                        <p class="task-title">{{ task.title }}</p>
+                        <p class="task-description">{{ task.description }}</p>
+                    </div>
+                    <div class="task-actions">
+                        <button mat-icon-button color="accent" (click)="startEditing(task)">
+                            <mat-icon>edit_square</mat-icon>
+                        </button>
+                        <button mat-icon-button color="primary" (click)="toggleTaskStatus(task)">
+                            <mat-icon>check_circle</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" (click)="deleteTask(task.id)">
+                            <mat-icon>delete_forever</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+
+        <!-- Tareas completadas -->
+        <h2 class="section-title text-success">Completed Tasks</h2>
+        <div *ngIf="completedTasks.length > 0">
+            <mat-card class="task-item-card" *ngFor="let task of completedTasks">
+                <div class="grid-container">
+                    <div class="task-content">
+                        <p class="task-title">{{ task.title }}</p>
+                        <p class="task-description">{{ task.description }}</p>
+                    </div>
+                    <div class="task-actions">
+                        <button mat-icon-button color="accent" (click)="startEditing(task)">
+                            <mat-icon>edit_square</mat-icon>
+                        </button>
+                        <button mat-icon-button color="primary" (click)="toggleTaskStatus(task)">
+                            <mat-icon>close_small</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" (click)="deleteTask(task.id)">
+                            <mat-icon>delete_forever</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+
+.container {
+  max-width: 650px;
+  margin: 0 auto;
+  margin-top: 48px;
+}
+
+/* Título principal */
+.app-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: #3f51b5; /* Cambia el color según tu preferencia */
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Estilo para títulos de secciones */
+.section-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #3f51b5;
+  margin: 16px 0;
+  text-align: center;
+}
+
+.text-primary {
+  color: #3f51b5; /* Color principal para Pending Tasks */
+}
+
+.text-success {
+  color: #4caf50; /* Color secundario para Completed Tasks */
+}
+
+/* Tarjeta de formulario */
+.task-form-card {
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #424242;
+  color: white;
+  border-radius: 8px;
+}
+
+/* Formulario completo */
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Botón alinear al final */
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* Tarjeta de cada tarea */
+.task-item-card {
+  margin-bottom: 8px;
+  background-color: #333;
+  color: #f0f0f0;
+  border-radius: 8px;
+}
+
+/* Diseño de cuadrícula para tarea */
+.grid-container {
+  display: flex;
+  align-items: center; 
+  padding: 16px;
+}
+
+/* Contenido de la tarea */
+.task-content {
+  flex: 2; /* Ocupa 8 columnas */
+  padding-right: 16px;
+  text-align: left; 
+}
+
+.task-title {
+  font-weight: bold;
+  margin: 0;
+  color: #ffeb3b; 
+}
+
+.task-description {
+  margin: 4px 0 0;
+  color: #e0e0e0;
+}
+
+/* Botones de acciones de tarea */
+.task-actions {
+  flex: 1; /* Ocupa 4 columnas */
+  display: flex;
+  justify-content: flex-end;
+}
